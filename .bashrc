@@ -225,11 +225,11 @@ neofetch
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
-alias v="~/Programs/nvim/bin/nvim"
-alias vim="~/Programs/nvim/bin/nvim"
-alias nvim="~/Programs/nvim/bin/nvim"
+alias v="~/owned/nvim/bin/nvim"
+alias vim="~/owned/nvim/bin/nvim"
+alias nvim="~/owned/nvim/bin/nvim"
 
-alias sv="sudo ~/Programs/nvim/bin/nvim"
-alias svim="sudo ~/Programs/nvim/bin/nvim"
-alias snvim="sudo ~/Programs/nvim/bin/nvim"
+alias sv="sudo ~/owned/nvim/bin/nvim"
+alias svim="sudo ~/owned/nvim/bin/nvim"
+alias snvim="sudo ~/owned/nvim/bin/nvim"
 

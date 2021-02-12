@@ -218,8 +218,10 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x282c34'
-    foreground: '0xbbc2cf'
+      #background: '0x282c34'
+      #foreground: '0xbbc2cf'
+    background: '0x00050f'
+    foreground: '0xefefef'
 
     # Bright and dim foreground colors
     #
@@ -321,7 +323,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.85
+background_opacity: 0.82431
 # background_opacity: 0.80
 
 #selection:
@@ -332,6 +334,9 @@ background_opacity: 0.85
 
 # Allow terminal applications to change Alacritty's window title.
 dynamic_title: true
+
+cursor:
+    style: "Block"
 
 #cursor:
   # Cursor style

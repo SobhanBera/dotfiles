@@ -58,11 +58,11 @@ keys = [
 
 # FUNCTION KEYS
 
-    Key([], "F12", lazy.spawn('alacritty')),
+    Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
 
 # SUPER + FUNCTION KEYS
 
-    Key([mod], "e", lazy.spawn('atom')),
+    Key([mod], "e", lazy.spawn('google-chrome-stable')),
     Key([mod], "c", lazy.spawn('conky-toggle')),
     Key([mod], "f", lazy.window.toggle_fullscreen()),
     Key([mod], "m", lazy.spawn('pragha')),
@@ -82,7 +82,7 @@ keys = [
     Key([mod], "F5", lazy.spawn('meld')),
     Key([mod], "F6", lazy.spawn('vlc --video-on-top')),
     Key([mod], "F7", lazy.spawn('virtualbox')),
-    Key([mod], "F8", lazy.spawn('thunar')),
+    Key([mod], "F8", lazy.spawn('pcmanfm')),
     Key([mod], "F9", lazy.spawn('evolution')),
     Key([mod], "F10", lazy.spawn("spotify")),
     Key([mod], "F11", lazy.spawn('rofi -show run -fullscreen')),
@@ -91,10 +91,10 @@ keys = [
 # SUPER + SHIFT KEYS
 
     Key([mod, "shift"], "Return", lazy.spawn('thunar')),
+    Key([mod], "d", lazy.spawn("dmenu_run -l 25 -i -nb '#191919' -nf '#0f60b6' -sb '#0f60b6' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
+    Key(["mod1"], "d", lazy.spawn("dmenu_run -l 25 -i -nb '#191919' -nf '#0f60b6' -sb '#0f60b6' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
     Key([mod, "shift"], "q", lazy.window.kill()),
-    Key([mod], "d", lazy.spawn("dmenu_run -l 25 -i -nb '#191919' -nf '#4040ef' -sb '#efefef' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
     Key([mod, "shift"], "r", lazy.restart()),
-    Key(["mod1"], "d", lazy.spawn("dmenu_run -l 25 -i -nb '#191919' -nf '#0f60b6' -sb '#efefef' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'")),
     Key([mod, "control"], "r", lazy.restart()),
     # Key([mod, "shift"], "x", lazy.shutdown()),
 
@@ -263,16 +263,16 @@ keys = [
 groups = []
 
 # FOR QWERTY KEYBOARDS
-group_names = ["1", "2", "3", "4", "5", "6", "7", "8"]
+group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
 # FOR AZERTY KEYBOARDS
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["", "", "", "", "", "", "", ""]
+group_labels = ["  ", "  ", "  ", "  ", "  ", "   ", "  ", "  ", "  ", "  "]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
-group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
+group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 #group_layouts = ["monadtall", "matrix", "monadtall", "bsp", "monadtall", "matrix", "monadtall", "bsp", "monadtall", "monadtall",]
 
 for i in range(len(group_names)):
@@ -287,6 +287,7 @@ for i in groups:
     keys.extend([
 
 #CHANGE WORKSPACES
+        Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Tab", lazy.screen.next_group()),
         Key(["mod1"], "Tab", lazy.screen.next_group()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
@@ -298,14 +299,10 @@ for i in groups:
     ])
 
 
-for i in group_names:
-    keys.append(Key([mod], str(i), lazy.group[i].toscreen()))
-    #keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
-
 def init_layout_theme():
     return {"margin":5,
             "border_width":2,
-            "border_focus": "#0f60b6",
+            "border_focus": "#5e81ac",
             "border_normal": "#4c566a"
             }
 
@@ -313,8 +310,8 @@ layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=3, border_width=2, border_focus="#0f60b6", border_normal="#cdcdef"),
-    layout.MonadWide(margin=3, border_width=2, border_focus="0f60b6", border_normal="#cdcdcd"),
+    layout.MonadTall(margin=10, border_width=1, border_focus="#0f60b6", border_normal="#303030"),
+    layout.MonadWide(margin=10, border_width=1, border_focus="#0f60b6", border_normal="#303030"),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -322,250 +319,198 @@ layouts = [
     layout.Max(**layout_theme)
 ]
 
-# COLORS FOR THE
+# COLORS FOR THE BAR
 
-# colors[0] = #282C34
-'''
-def init_colors():
-    return [["#252525", "#252525"], # background 0
-            ["#434758", "#434758"], # foreground 1
-            ["#FFFFFF", "#FFFFFF"], # active 2
-            ["#afafaf", "#afafaf"], # inactive 3
-            ["#ff7043", "#ff7043"], # widget icon + name backgound 4 - 1
-            ["#ffa726", "#ffa726"], # widget icon + name backgound 5 - 2
-            ["#ffee58", "#ffee58"], # widget icon + name backgound 6 - 3
-            ["#9ccc65", "#9ccc65"], # widget icon + name background 7 - 4
-            ["#26a69a", "#26a69a"], # color 8
-            ["#000000", "#000000"], # black 9
-            ["#ffffff", "#ffffff"], # black 10
-            ["#29b6f6", "#29b6f6"], # black 11
-            ["#5c6bc0", "#5c6bc0"], # black 12
-            ["#ab47bc", "#ab47bc"], # black 13
-            ["#ffffff", "#ffffff"]] # white 1
-'''
+#def init_colors():
+#    return [["#2F343F", "#2F343F"], # color 0
+#            ["#2F343F", "#2F343F"], # color 1
+#            ["#c0c5ce", "#c0c5ce"], # color 2
+#            ["#fba922", "#fba922"], # color 3
+#            ["#3384d0", "#3384d0"], # color 4
+#            ["#f3f4f5", "#f3f4f5"], # color 5
+#            ["#cd1f3f", "#cd1f3f"], # color 6
+#            ["#62FF00", "#62FF00"], # color 7
+#            ["#6790eb", "#6790eb"], # color 8
+#            ["#a9a9a9", "#a9a9a9"]] # color 9
 
 def init_colors():
-    return [["#252525", "#252525"], # background 0
-            ["#434758", "#434758"], # foreground 1
-            ["#FFFFFF", "#FFFFFF"], # active 2
-            ["#afafaf", "#afafaf"], # inactive 3
-            ["#202020", "#202020"], # widget icon + name backgound 4 - 1
-            ["#202020", "#202020"], # widget icon + name backgound 5 - 2
-            ["#202020", "#202020"], # widget icon + name backgound 6 - 3
-            ["#202020", "#202020"], # widget icon + name background 7 - 4
-            ["#202020", "#202020"], # color 8
-            ["#ffffff", "#ffffff"], # black 9
-            ["#000000", "#000000"], # black 10
-            ["#202020", "#202020"], # black 11
-            ["#202020", "#202020"], # black 12
-            ["#202020", "#202020"], # black 13
-            ["#202020", "#202020"]] # white 14
+    return [["#2F343F", "#2F343F"], # color 0
+            ["#202020", "#202020"], # 1 - background
+            ["#efefef", "#efefef"], # 2 - foreground
+            ["#808080", "#808080"], # 3 - disable
+            ["#ffffff", "#ffffff"], # 4 - enabled
+            ["#0f60b6", "#0f60b6"], # 5 - primary
+            ["#0f60b6", "#0f60b6"], # 6 - unique
+            ["#62FF00", "#62FF00"], # color 7
+            ["#6790eb", "#6790eb"], # color 8
+            ["#a9a9a9", "#a9a9a9"]] # color 9
+
 
 colors = init_colors()
-colorcustom = {
-        "main": "#0f60b6",
-        }
+
 
 # WIDGETS FOR THE BAR
 
 def init_widgets_defaults():
     return dict(font="Noto Sans",
-                fontsize = 14,
+                fontsize = 12,
                 padding = 2,
-                background=colors[4])
+                background=colors[1])
 
 widget_defaults = init_widgets_defaults()
 
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
-               widget.Sep(
-                        linewidth = 0,
-                        padding = 5,
-                        foreground = colors[0],
-                        background = colors[0]
-                    ),
-               widget.Image(
-                        filename = '~/.config/qtile/icons/layout-tile.png',
-                        mouse_callbacks = {'Button1': lambda qtile: qtile.cmd_spawn('dmenu_run')},
-                        padding = 7,
-                        margin = 5
-                    ),
                widget.GroupBox(font="FontAwesome",
-                        fontsize = 16,
-                        margin_y = 2,
-                        margin_x = 2,
+                        fontsize = 20,
+                        margin_y = 0,
+                        margin_x = 4,
                         padding_y = 0,
-                        padding_x = 10,
+                        padding_x = 4,
                         borderwidth = 0,
-                        disable_drag = False,
-                        active = colors[2],
+                        disable_drag = True,
+                        active = colors[4],
                         inactive = colors[3],
                         rounded = True,
                         highlight_method = "text",
-                        this_current_screen_border = colorcustom["main"],
-                        foreground = colors[9],
-                        background = colors[0],
-                        linewidth=0,
+                        this_current_screen_border = colors[5],
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.Sep(
                         linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.CurrentLayout(
                         font = "Noto Sans Bold",
-                        foreground = colors[5],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.Sep(
-                        linewidth = 1,
+                        linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.WindowName(font="Noto Sans",
                         fontsize = 12,
-                        foreground = colors[5],
-                        background = colors[0],
+                        foreground = colors[2],
+                        background = colors[1],
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
-                        ),
+               widget.Net(
+                   foreground=colors[2],
+                   background=colors[1],
+                   fontsize=16,
+                   format='{interface}: {down} ↓↑ {up}'
+                   ),
                widget.TextBox(
-                       padding = 3,
-                       font = "FontAwesome",
-                       text = " ",
-                       foreground = colors[9],
-                       backgound = colors[4],
-                       fill_color = colors[4]
-                       ),
-               widget.CapsNumLockIndicator(
-                       background=colors[5],
-                       foreground=colors[10],
-                       fontsize=14,
-                       )
-               widge.Backlight(
+                        font="FontAwesome",
+                        text="   ",
+                        foreground=colors[6],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=14
+                        ),
+               widget.Backlight(
                        fontsize = 14,
-                       foreground = colors[9],
-                       backgound = colors[4],
+                       foreground = colors[2],
+                       backgound = colors[1],
                        brightness_file = '/sys/class/backlight/intel_backlight/actual_brightness',
                        max_brightness_file = '/sys/class/backlight/intel_backlight/max_brightness',
-                       margin=4
+                       margin=4,
+                       step=5,
+                       format='{percent:2.00%}'
                        ),
                widget.TextBox(
-                       text=" ",
-                       padding=2,
-                       foreground=colors[9],
-                       background=colors[5],
-                       fontsize=14
-                       ),
-               widget.ThermalSensor(
-                         margin=4,
-                         foreground = colors[9],
-                         foreground_alert = colors[9],
-                         background = colors[5],
-                         metric = True,
-                         padding = 3,
-                         threshold = 80
+                        font="FontAwesome",
+                        text="   ",
+                        foreground=colors[6],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=14
                         ),
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
-                        ),
-               '''
-               widget.TextBox(
-                       padding=3,
-                       font="FontAwesome",
-                       text=" ",
-                       fonsize=14,
-                       foreground=colors[9],
-                       background=colors[6],
-                       margin=3
-                       ),
                widget.Battery(
                          font="Noto Sans",
-                         update_interval=10,
-                         fontsize=14,
-                         foreground=colors[9],
-                         background=colors[6],
-                         charge_char="^",
-                         discharge_char="V",
-                         margin=2,
-                         low_percentage=0.7,
-                         low_foreground="#5050ef",
-                         notify_be_low=True
-                         ),
-                         '''
-               widget.Sep(
-                        linewidth = 1,
-                        padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                         update_interval = 10,
+                         fontsize = 14,
+                         foreground = colors[2],
+                         background = colors[1],
+                         format='{char} {percent:2.0%} -> W'
+	                 ),
+               widget.TextBox(
+                        font="FontAwesome",
+                        text="   ",
+                        foreground=colors[6],
+                        background=colors[1],
+                        padding = 0,
+                        fontsize=14
+                        ),
+               widget.CPUGraph(
+                        border_color = colors[2],
+                        fill_color = colors[4],
+                        graph_color = colors[4],
+                        background=colors[1],
+                        border_width = 1,
+                        line_width = 1,
+                        core = "all",
+                        type = "linefill"
                         ),
                widget.Sep(
-                        linewidth = 1,
+                        linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.TextBox(
                         font="FontAwesome",
-                        text="  ",
-                        foreground=colors[9],
-                        background=colors[8],
+                        text="   ",
+                        foreground=colors[6],
+                        background=colors[1],
                         padding = 0,
-                        fontsize=14,
+                        fontsize=18
                         ),
                widget.Memory(
                         font="Noto Sans",
-                        format='{MemUsed}M/{MemTotal}M',
+                        format = '{MemUsed}M/{MemTotal}M',
                         update_interval = 1,
                         fontsize = 14,
-                        foreground = colors[9],
-                        background = colors[8],
+                        foreground = colors[2],
+                        background = colors[1],
                        ),
                widget.Sep(
-                        linewidth = 1,
+                        linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.TextBox(
                         font="FontAwesome",
-                        text="  ",
-                        foreground=colors[9],
-                        background=colors[11],
+                        text="   ",
+                        foreground=colors[6],
+                        background=colors[1],
                         padding = 0,
                         fontsize=14
                         ),
                widget.Clock(
-                        foreground = colors[9],
-                        background = colors[11],
+                        foreground = colors[2],
+                        background = colors[1],
                         fontsize = 14,
                         format="%Y-%m-%d %H:%M"
                         ),
-               widget.Clipboard(
-                       background=colors[12],
-                       foreground=colors[9]
-                       ),
                widget.Sep(
-                        linewidth = 1,
+                        linewidth = 0,
                         padding = 10,
-                        foreground = colors[0],
-                        background = colors[0]
+                        foreground = colors[2],
+                        background = colors[1]
                         ),
                widget.Systray(
-                        background=colors[10],
-                        icon_size=21,
-                        padding = 3,
-                        max_width=30,
+                        background=colors[1],
+                        icon_size=22,
+                        padding = 8,
+                        margin = 2
                         ),
               ]
     return widgets_list
@@ -586,7 +531,7 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=28)),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26))]
 screens = init_screens()
 
