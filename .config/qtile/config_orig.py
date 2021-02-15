@@ -350,7 +350,7 @@ def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
                widget.GroupBox(font="FontAwesome",
-                        fontsize = 16,
+                        fontsize = 14,
                         margin_y = -1,
                         margin_x = 0,
                         padding_y = 6,

@@ -56,6 +56,53 @@ def window_to_next_group(qtile):
 
 keys = [
 
+# CUSTOM KEY
+# FOR INCREASING AND DECREASING LAYOUT SIZE...
+     Key(["control", "shift"], "l",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+        ),
+    Key(["control", "shift"], "Right",
+        lazy.layout.grow_right(),
+        lazy.layout.grow(),
+        lazy.layout.increase_ratio(),
+        lazy.layout.delete(),
+        ),
+    Key(["control", "shift"], "h",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+        ),
+    Key(["control", "shift"], "Left",
+        lazy.layout.grow_left(),
+        lazy.layout.shrink(),
+        lazy.layout.decrease_ratio(),
+        lazy.layout.add(),
+        ),
+    Key(["control", "shift"], "k",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+        ),
+    Key(["control", "shift"], "Up",
+        lazy.layout.grow_up(),
+        lazy.layout.grow(),
+        lazy.layout.decrease_nmaster(),
+        ),
+    Key(["control", "shift"], "j",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+        ),
+    Key(["control", "shift"], "Down",
+        lazy.layout.grow_down(),
+        lazy.layout.shrink(),
+        lazy.layout.increase_nmaster(),
+        ),
+
 # FUNCTION KEYS
 
     Key([], "F12", lazy.spawn('xfce4-terminal --drop-down')),
@@ -289,7 +336,10 @@ for i in groups:
 #CHANGE WORKSPACES
         Key([mod], i.name, lazy.group[i.name].toscreen()),
         Key([mod], "Tab", lazy.screen.next_group()),
-        Key(["mod1"], "Tab", lazy.screen.next_group()),
+        #Key(["mod1"], "Tab", lazy.screen.next_group()),
+        # alt + tab will shift focus of layouts... like in windows
+        # and S + tab will change screens...
+        Key(["mod1"], "Tab", lazy.layout.up()),
         Key(["mod1", "shift"], "Tab", lazy.screen.prev_group()),
 
 # MOVE WINDOW TO SELECTED WORKSPACE 1-10 AND STAY ON WORKSPACE
@@ -302,16 +352,30 @@ for i in groups:
 def init_layout_theme():
     return {"margin":5,
             "border_width":2,
-            "border_focus": "#5e81ac",
-            "border_normal": "#4c566a"
+            "border_focus": "#dfdfdf",
+            "border_normal": "#656565"
             }
 
 layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=12, border_width=2, border_focus="#afafaf", border_normal="#505050"),
-    layout.MonadWide(margin=12, border_width=2, border_focus="#afafaf", border_normal="#505050"),
+    layout.MonadTall(
+        margin=8,
+        border_width=0,
+        border_focus="#dfdfdf",
+        border_normal="#656565",
+        max_ratio=0.9,
+        change_size= 0.1,
+        change_ratio=0.025,
+        name="sobhanbera",
+    ),
+    layout.MonadWide(
+        margin=10,
+        border_width=0,
+        border_focus="#dfdfdf",
+        border_normal="#656565"
+    ),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -381,18 +445,25 @@ def init_widgets_defaults():
 
 widget_defaults = init_widgets_defaults()
 
+# mouse callbacks functions...
+# opens nvim or vim...
+def open_vim(qtile):
+    qtile.cmd_spawn('alacritty -e vim')
+def open_htop_memory(qtile):
+    qtile.cmd_spawn('alacritty -e htop')
+
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
                widget.GroupBox(
                         font="FontAwesome",
-                        fontsize = 20,
+                        fontsize = 16,
                         margin_y = 0,
                         margin_x = 0,
                         padding_y = 8,
                         padding_x = 5,
                         borderwidth = 0,
-                        disable_drag = True,
+                        disable_drag = False,
                         active = colors[4],
                         inactive = colors[3],
                         rounded = True,
@@ -425,22 +496,37 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                widget.WindowName(font="Noto Sans",
-                        fontsize = 12,
+                        fontsize = 14,
                         foreground = colors[2],
                         background = colors[1],
                         ),
                widget.TextBox(
                         text="",
-                        foreground=colors[5],
+                        foreground=colors[2],
                         background=colors[1],
+                        padding = 0,
+                        fontsize=48
+                        ),
+               #widget.TextBox(
+               #         text="VIM",
+               #         fontsize=12,
+               #         foreground=colors[1],
+               #         background=colors[2],
+               #        mouse_callbacks={'Button1': open_vim}
+               #    ),
+               widget.TextBox(
+                        text="",
+                        foreground=colors[5],
+                        background=colors[2],
                         padding = 0,
                         fontsize=49
                         ),
                widget.Net(
                    foreground=colors[1],
                    background=colors[5],
-                   fontsize=16,
-                   format='{down} ↓↑ {up}'
+                   fontsize=13,
+                   format='↓{down} ↑{up}',
+                   #↓↑
                    ),
                widget.TextBox(
                         text="",
@@ -454,7 +540,7 @@ def init_widgets_list():
                        padding = 2,
                        foreground = colors[1],
                        background = colors[2],
-                       fontsize = 16
+                       fontsize = 13
                        ),
               widget.ThermalSensor(
                        foreground = colors[1],
@@ -475,10 +561,10 @@ def init_widgets_list():
                         foreground=colors[1],
                         background=colors[5],
                         padding = 0,
-                        fontsize=16
+                        fontsize=13
                         ),
                widget.Backlight(
-                       fontsize = 16,
+                       fontsize = 13,
                        foreground = colors[1],
                        background = colors[5],
                        brightness_file = '/sys/class/backlight/intel_backlight/actual_brightness',
@@ -500,16 +586,41 @@ def init_widgets_list():
                         foreground=colors[6],
                         background=colors[2],
                         padding = 0,
-                        fontsize=16
+                        fontsize=13
                         ),
                widget.Battery(
                          font="Noto Sans",
                          update_interval = 10,
-                         fontsize = 16,
+                         fontsize = 13,
                          foreground = colors[1],
                          background = colors[2],
-                         format='{char} {percent:2.0%} -> W'
+                         format='{percent:2.0%} {char}'
 	                 ),
+               #widget.TextBox(
+               #         text="",
+               #         foreground=colors[5],
+               #         background=colors[2],
+               #         padding = 0,
+               #         fontsize=48
+               #         ),
+               #widget.TextBox(
+               #         font="FontAwesome",
+               #         text="   ",
+               #         foreground=colors[1],
+               #         background=colors[5],
+               #         padding = 0,
+               #         fontsize=13
+               #         ),
+               #widget.CPUGraph(
+               #         border_color = colors[1],
+               #         fill_color = colors[1],
+               #         graph_color = colors[1],
+               #         background=colors[5],
+               #         border_width = 1,
+               #         line_width = 1,
+               #         core = "all",
+               #         type = "linefill"
+               #         ),
                widget.TextBox(
                         text="",
                         foreground=colors[5],
@@ -517,24 +628,23 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=48
                         ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="   ",
-                        foreground=colors[1],
-                        background=colors[5],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.CPUGraph(
-                        border_color = colors[1],
-                        fill_color = colors[1],
-                        graph_color = colors[1],
-                        background=colors[5],
-                        border_width = 1,
-                        line_width = 1,
-                        core = "all",
-                        type = "linefill"
-                        ),
+               #widget.TextBox(
+               #         font="FontAwesome",
+               #         text="   ",
+               #         foreground=colors[1],
+               #         background=colors[2],
+               #         padding = 0,
+               #         fontsize=13
+               #         ),
+               widget.Memory(
+                        font="Noto Sans",
+                        format = '{MemUsed} / {MemTotal}',
+                        update_interval = 1,
+                        fontsize = 13,
+                        foreground = colors[1],
+                        background = colors[5],
+                        mouse_callbacks={'Button1': open_htop_memory}
+                       ),
                widget.TextBox(
                         text="",
                         foreground=colors[2],
@@ -542,47 +652,25 @@ def init_widgets_list():
                         padding = 0,
                         fontsize=48
                         ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="   ",
-                        foreground=colors[1],
-                        background=colors[2],
-                        padding = 0,
-                        fontsize=16
-                        ),
-               widget.Memory(
-                        font="Noto Sans",
-                        format = '{MemUsed}M/{MemTotal}M',
-                        update_interval = 1,
-                        fontsize = 14,
-                        foreground = colors[1],
-                        background = colors[2],
-                       ),
-               widget.TextBox(
-                        text="",
-                        foreground=colors[5],
-                        background=colors[2],
-                        padding = 0,
-                        fontsize=48
-                        ),
-               widget.TextBox(
-                        font="FontAwesome",
-                        text="   ",
-                        foreground=colors[1],
-                        background=colors[5],
-                        padding = 0,
-                        fontsize=16
-                        ),
+               #widget.TextBox(
+               #         font="FontAwesome",
+               #         text="   ",
+               #         foreground=colors[1],
+               #         background=colors[2],
+               #         padding = 0,
+               #         fontsize=13
+               #         ),
                widget.Clock(
                         foreground = colors[1],
-                        background = colors[5],
-                        fontsize = 14,
-                        format="%Y-%m-%d %H:%M"
+                        background = colors[2],
+                        fontsize = 13,
+                        format="%d-%b-%Y %H:%M %p",
+                        #format="%c",
                         ),
                 widget.TextBox(
                         text="",
                         foreground=colors[9],
-                        background=colors[5],
+                        background=colors[2],
                         padding = 0,
                         fontsize=48
                         ),
@@ -611,7 +699,7 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=29, opacity=0.87, margin=0, backgound=colors[1])),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=27, opacity=0.6, margin=0, backgound=colors[1])),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=30))]
 screens = init_screens()
 

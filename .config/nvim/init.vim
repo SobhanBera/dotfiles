@@ -54,6 +54,8 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'mileszs/ack.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'ap/vim-css-color'
+Plug 'alvan/vim-closetag'
+Plug 'samuelsimoes/vim-jsx-utils'
 "Plug 'tmhedberg/simpylfold'
 
 call plug#end()
@@ -69,6 +71,7 @@ nnoremap <leader>z <Esc>:w<CR>
 nnoremap <leader>vs <Esc>:vs<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader>s :source $MYVIMRC<CR>
+nnoremap <leader>q :q<CR>
 nnoremap <leader>bN :bprevious<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bd :bd<CR>
@@ -319,6 +322,22 @@ nnoremap <C-f> :NERDTreeFind<CR>
 let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tag closer configs...
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.javascript'
+let g:closetag_emptyTags_caseSensitive = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" jsx utils...
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>ja :call JSXEncloseReturn()<CR>
+nnoremap <leader>ji :call JSXEachAttributeInLine()<CR>
+nnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
+nnoremap <leader>jc :call JSXChangeTagPrompt()<CR>
+nnoremap vat :call JSXSelectTag()<CR>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " folding configs...
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:SimpylFold_docstring_preview = 1
@@ -391,6 +410,5 @@ function! RandInt(Low, High) abort
     return l:milisec % (a:High - a:Low + 1) + a:Low
 endfunction
 
-
 " END OF CONFIGs...
-"testing
+

@@ -1,0 +1,25 @@
+snippet rnfc "React Native Functional Component" b
+import React from 'react';
+import {View, StyleSheet, Text} from 'react-native';
+
+const ${1:Component} = (${2:props}) => {
+	return (
+		${0:<View>
+			<Text>${1:Component} Component</Text>
+		</View>}
+	);
+}
+
+const styles = StyleSheet.create({
+	screen: {
+		flex: 1
+	}
+});
+
+export default ${1:Component};
+
+endsnippet
+
+snippet log "Javascript|Typescript console log statement..." b
+console.log($1);$0
+endsnippet
