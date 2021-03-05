@@ -64,19 +64,7 @@ keys = [
         lazy.layout.increase_ratio(),
         lazy.layout.delete(),
         ),
-    Key(["control", "shift"], "Right",
-        lazy.layout.grow_right(),
-        lazy.layout.grow(),
-        lazy.layout.increase_ratio(),
-        lazy.layout.delete(),
-        ),
     Key(["control", "shift"], "h",
-        lazy.layout.grow_left(),
-        lazy.layout.shrink(),
-        lazy.layout.decrease_ratio(),
-        lazy.layout.add(),
-        ),
-    Key(["control", "shift"], "Left",
         lazy.layout.grow_left(),
         lazy.layout.shrink(),
         lazy.layout.decrease_ratio(),
@@ -87,17 +75,7 @@ keys = [
         lazy.layout.grow(),
         lazy.layout.decrease_nmaster(),
         ),
-    Key(["control", "shift"], "Up",
-        lazy.layout.grow_up(),
-        lazy.layout.grow(),
-        lazy.layout.decrease_nmaster(),
-        ),
     Key(["control", "shift"], "j",
-        lazy.layout.grow_down(),
-        lazy.layout.shrink(),
-        lazy.layout.increase_nmaster(),
-        ),
-    Key(["control", "shift"], "Down",
         lazy.layout.grow_down(),
         lazy.layout.shrink(),
         lazy.layout.increase_nmaster(),
@@ -176,10 +154,10 @@ keys = [
     Key(["mod1"], "n", lazy.spawn('variety -n')),
     Key(["mod1"], "p", lazy.spawn('variety -p')),
     Key(["mod1"], "t", lazy.spawn('variety -t')),
-    Key(["mod1"], "Up", lazy.spawn('variety --pause')),
-    Key(["mod1"], "Down", lazy.spawn('variety --resume')),
-    Key(["mod1"], "Left", lazy.spawn('variety -p')),
-    Key(["mod1"], "Right", lazy.spawn('variety -n')),
+#    Key(["mod1"], "Up", lazy.spawn('variety --pause')),
+#    Key(["mod1"], "Down", lazy.spawn('variety --resume')),
+#    Key(["mod1"], "Left", lazy.spawn('variety -p')),
+#    Key(["mod1"], "Right", lazy.spawn('variety -n')),
     Key(["mod1"], "F2", lazy.spawn('gmrun')),
     Key(["mod1"], "F3", lazy.spawn('xfce4-appfinder')),
 
@@ -316,7 +294,7 @@ group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 #group_names = ["ampersand", "eacute", "quotedbl", "apostrophe", "parenleft", "section", "egrave", "exclam", "ccedilla", "agrave",]
 
 #group_labels = ["1 ", "2 ", "3 ", "4 ", "5 ", "6 ", "7 ", "8 ", "9 ", "0",]
-group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "]
+group_labels = ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  ", "  "]
 #group_labels = ["Web", "Edit/chat", "Image", "Gimp", "Meld", "Video", "Vb", "Files", "Mail", "Music",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
@@ -348,39 +326,73 @@ for i in groups:
         Key([mod, "shift"], i.name, lazy.window.togroup(i.name) , lazy.group[i.name].toscreen()),
     ])
 
+# custom name in different fonts...
+# and remove conky bvy default...
+# lazy.spawn('conky-toggle')
+import random
+my_name_list = [
+    "🅂🄾🄱🄷🄰🄽 🄱🄴🅁🄰",
+    "🆂🅾🅱🅷🅰🅽 🅱🅴🆁🅰",  
+    "🅢🅞🅑🅗🅐🅝 🅑🅔🅡🅐",
+    "ⓈⓄⒷⒽⒶⓃ ⒷⒺ ⓇⒶ",
+    "𝕊𝕆𝔹ℍ𝔸ℕ 𝔹𝔼ℝ𝔸",
+    "S̶O̶B̶H̶A̶N̶ B̶E̶R̶A̶",
+    # "𝒮𝒪ℬℋ𝒜𝒩 ℬℰℛ𝒜",
+    "𝓢𝓞𝓑𝓗𝓐𝓝 𝓑𝓔𝓡𝓐",
+    # "ϨⲞⲂⲎⲀⲚ ⲂⲈꞄⲀ",
+    "SOẞԨ𝓐Ɲ ẞƐᎡ𝓐",
+    "⟆〇ᗷᕼᗩƝ ᗷᕮᖇᗩ",
+    "𝙎𝙊𝘽𝙃𝘼𝙉 𝘽𝙀𝙍𝘼",
+    "🆂 🄾 🅑 ℍ ᗩ 𝓝 ẞ Ǝ 🆁 𝓐",
+    # "$⊙β¦-¦Д⁄(⁄  β€®Д"
+]
 
-def init_layout_theme():
-    return {"margin":5,
-            "border_width":2,
-            "border_focus": "#dfdfdf",
-            "border_normal": "#656565"
-            }
-
-layout_theme = init_layout_theme()
-
+def init_layout_theme(name):
+    return {
+        "margin":5,
+        "border_width":2,
+        "border_focus": "#dfdfdf",
+        "border_normal": "#656565",
+        "name": f"{random.choice(my_name_list)} ({name})"
+    }
+# layout_theme = init_layout_theme("tab name")
 
 layouts = [
     layout.MonadTall(
-        margin=8,
+        margin=16,
         border_width=0,
         border_focus="#dfdfdf",
         border_normal="#656565",
-        max_ratio=0.9,
-        change_size= 0.1,
-        change_ratio=0.025,
-        name="sobhanbera",
+        max_ratio=0.95,
+        change_size= 0.085,
+        change_ratio=0.038,
+        name=random.choice(my_name_list) + "    (MonadTall)",
+        fontsize=20,
+        new_at_current=True,
+        ratio=0.55
     ),
     layout.MonadWide(
-        margin=10,
+        # margin=10,
+        # border_width=1,
+        # border_focus="#dfdfdf",
+        # border_normal="#656565",
+        margin=16,
         border_width=0,
         border_focus="#dfdfdf",
-        border_normal="#656565"
+        border_normal="#656565",
+        max_ratio=0.95,
+        change_size= 0.085,
+        change_ratio=0.038,
+        name=random.choice(my_name_list) + "    (MonadWide)",
+        fontsize=20,
+        new_at_current=True,
+        ratio=0.55
     ),
-    layout.Matrix(**layout_theme),
-    layout.Bsp(**layout_theme),
-    layout.Floating(**layout_theme),
-    layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme)
+    layout.Matrix(**init_layout_theme("Matrix")),
+    layout.Bsp(**init_layout_theme("Bsp")),
+    layout.Floating(**init_layout_theme("Floating")),
+    layout.RatioTile(**init_layout_theme("RatioTile")),
+    layout.Max(**init_layout_theme("Max"))
 ]
 
 # COLORS FOR THE BAR
@@ -433,7 +445,7 @@ def colorsToggler():
         currcolor = True
 
 # change color
-keys.extend([Key([mod], "c", colorsToggler)])
+# keys.extend([Key([mod], "c", colorsToggler)])
 
 # WIDGETS FOR THE BAR
 
@@ -457,7 +469,7 @@ def init_widgets_list():
     widgets_list = [
                widget.GroupBox(
                         font="FontAwesome",
-                        fontsize = 16,
+                        fontsize = 15,
                         margin_y = 0,
                         margin_x = 0,
                         padding_y = 8,
@@ -699,7 +711,7 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=27, opacity=0.6, margin=0, backgound=colors[1])),
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26, opacity=0.60, margin=0, background=colors[1])),
             Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=30))]
 screens = init_screens()
 

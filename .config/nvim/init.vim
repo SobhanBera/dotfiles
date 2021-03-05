@@ -16,6 +16,7 @@ set undofile
 set incsearch
 set nohlsearch
 set hidden
+set history=3333
 set termguicolors
 set scrolloff=7
 set completeopt=menuone,noinsert,noselect
@@ -26,6 +27,8 @@ set updatetime=200
 set shortmess+=c
 set splitright
 set splitbelow
+
+" cd ~/Documents
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -57,7 +60,16 @@ Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'samuelsimoes/vim-jsx-utils'
 "Plug 'tmhedberg/simpylfold'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'mattn/emmet-vim'
 
+"NEW
+"Plug 'prettier/vim-prettier'
+"OLD
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/0.x'
+  \ }
 call plug#end()
 
 colorscheme gruvbox
@@ -228,8 +240,11 @@ nmap <leader>rn <Plug>(coc-rename)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Formatting selected code.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+"FOR COC-PRETTIER
+"xmap <leader>f  <Plug>(coc-format-selected)
+"nmap <leader>f  <Plug>(coc-format-selected)
+"FOR VIM-PRETTIER
+"NOTHIN currently...
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-test...
@@ -314,7 +329,7 @@ let g:startify_lists = [
 " NERDTREE CONFIGs...
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>:vertical resize 35<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>:vertical resize 30<CR>
 nnoremap <C-t> :NERDTree<CR>:vertical resize 35<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 
@@ -336,6 +351,33 @@ nnoremap <leader>je :call JSXExtractPartialPrompt()<CR>
 nnoremap <leader>jc :call JSXChangeTagPrompt()<CR>
 nnoremap vat :call JSXSelectTag()<CR>
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" multicursor configs...
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_select_all_word_key = '<A-m>'
+let g:multi_cursor_start_key           = 'g<C-m>'
+let g:multi_cursor_select_all_key      = 'g<A-m>'
+let g:multi_cursor_next_key            = '<C-m>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" emmet configs...
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_mode='inv'  "enable all functions, which is equal to
+let g:user_emmet_mode='a'    "enable all function in all mode.
+" Enable just for html/css
+let g:user_emmet_install_global = 0
+autocmd FileType js,ts,css,html,javascript,typescript EmmetInstall
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " folding configs...
