@@ -1,0 +1,590 @@
+INFO: 2021-03-23 00:29:28,812: main() 'Using profile folder /home/sobhan/.config/variety/'
+INFO: 2021-03-23 00:29:29,091: perform_upgrade() 'Last run version was 0.8.5 or earlier, current version is 0.8.5'
+INFO: 2021-03-23 00:29:29,260: process_command() 'Received command: []'
+INFO: 2021-03-23 00:29:29,263: load_banned() 'Missing or invalid banned URLs list, no URLs will be banned'
+INFO: 2021-03-23 00:29:29,562: start() 'Using data_path /usr/share/variety'
+INFO: 2021-03-23 00:29:29,563: load() 'Jumble loading'
+INFO: 2021-03-23 00:29:29,600: _walk_modules() 'Jumble loading module in __init__ from /usr/lib/python3.9/site-packages/variety/plugins/builtin/__init__.py'
+INFO: 2021-03-23 00:29:29,699: _walk_modules() 'Jumble loading module in __init__ from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/__init__.py'
+INFO: 2021-03-23 00:29:29,950: _walk_modules() 'Jumble loading module in LocalFilesSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/LocalFilesSource.py'
+INFO: 2021-03-23 00:29:29,986: load() 'Jumble found plugin class: <class 'LocalFilesSource.LocalFilesSource'>: {'name': 'Local text files', 'description': 'Displays quotes, defined in local text files.\nPut your own txt files in: ~/.config/variety/pluginconfig/quotes/.\nThe file format is:\n\nquote -- author\n.\nsecond quote -- another author\n.\netc...\n\nExample: http://rvelthuis.de/zips/quotes.txt', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:30,028: _walk_modules() 'Jumble loading module in UrbanDictionarySource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/UrbanDictionarySource.py'
+INFO: 2021-03-23 00:29:30,085: load() 'Jumble found plugin class: <class 'UrbanDictionarySource.UrbanDictionarySource'>: {'name': 'Urban Dictionary', 'description': 'Displays definitions from Urban Dictionary', 'author': 'James Miller', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:30,127: _walk_modules() 'Jumble loading module in QuotationsPageSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/QuotationsPageSource.py'
+INFO: 2021-03-23 00:29:30,647: load() 'Jumble found plugin class: <class 'QuotationsPageSource.QuotationsPageSource'>: {'name': 'TheQuotationsPage.com', 'description': 'Fetches quotes from TheQuotationsPage.com', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:30,692: _walk_modules() 'Jumble loading module in GoodreadsSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/GoodreadsSource.py'
+INFO: 2021-03-23 00:29:30,727: load() 'Jumble found plugin class: <class 'GoodreadsSource.GoodreadsSource'>: {'name': 'Goodreads', 'description': 'Fetches quotes from Goodreads.com', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:30,769: _walk_modules() 'Jumble loading module in FortuneSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/quotes/FortuneSource.py'
+INFO: 2021-03-23 00:29:30,836: load() 'Jumble found plugin class: <class 'FortuneSource.FortuneSource'>: {'name': 'UNIX fortune program', 'description': 'Displays quotes using the UNIX fortune program. You may want to install additional fortune packs, e.g. fortunes-bofh-excuses.', 'author': 'Dan Jones', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:30,921: _walk_modules() 'Jumble loading module in APODDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/APODDownloader.py'
+INFO: 2021-03-23 00:29:30,969: load() 'Jumble found plugin class: <class 'APODDownloader.APODDownloader'>: {'name': 'APODDownloader', 'description': 'NASA Astro Pic of the Day', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,011: _walk_modules() 'Jumble loading module in UnsplashConfigurableSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/UnsplashConfigurableSource.py'
+INFO: 2021-03-23 00:29:31,127: load() 'Jumble found plugin class: <class 'UnsplashConfigurableSource.UnsplashConfigurableSource'>: {'name': 'UnsplashConfigurableSource', 'description': 'Configurable source for fetching photos from Unsplash.com', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,165: _walk_modules() 'Jumble loading module in RedditSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/RedditSource.py'
+INFO: 2021-03-23 00:29:31,300: load() 'Jumble found plugin class: <class 'RedditSource.RedditSource'>: {'name': 'RedditSource', 'description': 'Configurable source for fetching images from Reddit', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,343: _walk_modules() 'Jumble loading module in MediaRSSSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/MediaRSSSource.py'
+INFO: 2021-03-23 00:29:31,610: load() 'Jumble found plugin class: <class 'MediaRSSSource.MediaRSSSource'>: {'name': 'MediaRSSSource', 'description': 'Configurable source for fetching images from MediaRSS feeds', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,642: _walk_modules() 'Jumble loading module in WallhavenDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/WallhavenDownloader.py'
+INFO: 2021-03-23 00:29:31,678: _walk_modules() 'Jumble loading module in __init__ from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/__init__.py'
+INFO: 2021-03-23 00:29:31,719: _walk_modules() 'Jumble loading module in EarthviewDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/EarthviewDownloader.py'
+INFO: 2021-03-23 00:29:31,766: load() 'Jumble found plugin class: <class 'EarthviewDownloader.EarthviewDownloader'>: {'name': 'EarthviewDownloader', 'description': 'Google Earth View Wallpapers', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,767: _walk_modules() 'Jumble loading module in UnsplashDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/UnsplashDownloader.py'
+INFO: 2021-03-23 00:29:31,770: load() 'Jumble found plugin class: <class 'UnsplashDownloader.UnsplashDownloader'>: {'name': 'UnsplashDownloader', 'description': 'High-resolution photos from Unsplash.com', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,818: _walk_modules() 'Jumble loading module in BingDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/BingDownloader.py'
+INFO: 2021-03-23 00:29:31,865: load() 'Jumble found plugin class: <class 'BingDownloader.BingDownloader'>: {'name': 'BingDownloader', 'description': 'Bing Photo of the Day', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:31,867: _walk_modules() 'Jumble loading module in MediaRSSDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/MediaRSSDownloader.py'
+INFO: 2021-03-23 00:29:31,870: _walk_modules() 'Jumble loading module in RedditDownloader from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/RedditDownloader.py'
+INFO: 2021-03-23 00:29:31,907: _walk_modules() 'Jumble loading module in WallhavenSource from /usr/lib/python3.9/site-packages/variety/plugins/builtin/downloaders/WallhavenSource.py'
+INFO: 2021-03-23 00:29:31,912: load() 'Jumble found plugin class: <class 'WallhavenSource.WallhavenSource'>: {'name': 'WallhavenSource', 'description': 'Configurable source for fetching images from Wallhaven.cc', 'author': 'Peter Levi', 'version': '0.1'}'
+INFO: 2021-03-23 00:29:32,304: log_options() 'Loaded options:'
+INFO: 2021-03-23 00:29:32,304: log_options() 'change_enabled = False'
+INFO: 2021-03-23 00:29:32,305: log_options() 'change_interval = 300'
+INFO: 2021-03-23 00:29:32,305: log_options() 'change_on_start = False'
+INFO: 2021-03-23 00:29:32,305: log_options() 'clipboard_enabled = False'
+INFO: 2021-03-23 00:29:32,305: log_options() 'clipboard_hosts = ['wallhaven.cc', 'ns223506.ovh.net', 'wallpapers.net', 'flickr.com', 'imgur.com', 'deviantart.com', 'interfacelift.com', 'vladstudio.com']'
+INFO: 2021-03-23 00:29:32,305: log_options() 'clipboard_use_whitelist = True'
+INFO: 2021-03-23 00:29:32,306: log_options() 'clock_date_font = Ubuntu Condensed, 30'
+INFO: 2021-03-23 00:29:32,306: log_options() 'clock_enabled = True'
+INFO: 2021-03-23 00:29:32,306: log_options() 'clock_filter = -density 100 -font `fc-match -f '%{file[0]}' '%CLOCK_FONT_NAME'` -pointsize %CLOCK_FONT_SIZE -gravity SouthEast -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+108] '%H:%M' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+110] '%H:%M' -font `fc-match -f '%{file[0]}' '%DATE_FONT_NAME'` -pointsize %DATE_FONT_SIZE -fill '#00000044' -annotate 0x0+[%HOFFSET+58]+[%VOFFSET+58] '%A, %B %d' -fill white -annotate 0x0+[%HOFFSET+60]+[%VOFFSET+60] '%A, %B %d''
+INFO: 2021-03-23 00:29:32,306: log_options() 'clock_font = Ubuntu Condensed, 70'
+INFO: 2021-03-23 00:29:32,306: log_options() 'configfile = /home/sobhan/.config/variety/variety.conf'
+INFO: 2021-03-23 00:29:32,307: log_options() 'copyto_enabled = False'
+INFO: 2021-03-23 00:29:32,307: log_options() 'copyto_folder = Default'
+INFO: 2021-03-23 00:29:32,307: log_options() 'desired_color = [160, 160, 160]'
+INFO: 2021-03-23 00:29:32,307: log_options() 'desired_color_enabled = False'
+INFO: 2021-03-23 00:29:32,307: log_options() 'download_folder = /home/sobhan/.config/variety/Downloaded'
+INFO: 2021-03-23 00:29:32,307: log_options() 'download_preference_ratio = 0.9'
+INFO: 2021-03-23 00:29:32,308: log_options() 'favorites_folder = /home/sobhan/.config/variety/Favorites'
+INFO: 2021-03-23 00:29:32,308: log_options() 'favorites_operations = [['Downloaded', 'Copy'], ['Fetched', 'Move'], ['Others', 'Copy']]'
+INFO: 2021-03-23 00:29:32,308: log_options() 'fetched_folder = /home/sobhan/.config/variety/Fetched'
+INFO: 2021-03-23 00:29:32,308: log_options() 'filters = [[False, 'Keep original', ''], [False, 'Grayscale', '-type Grayscale'], [False, 'Heavy blur', '-blur 120x40'], [False, 'Oil painting', '-paint 6'], [False, 'Charcoal painting', '-charcoal 3'], [False, 'Pointilism', '-spread 10 -noise 3'], [False, 'Pixellate', '-scale 3% -scale 3333%']]'
+INFO: 2021-03-23 00:29:32,308: log_options() 'icon = Light'
+INFO: 2021-03-23 00:29:32,308: log_options() 'lightness_enabled = False'
+INFO: 2021-03-23 00:29:32,309: log_options() 'lightness_mode = 0'
+INFO: 2021-03-23 00:29:32,309: log_options() 'min_rating = 4'
+INFO: 2021-03-23 00:29:32,309: log_options() 'min_rating_enabled = False'
+INFO: 2021-03-23 00:29:32,309: log_options() 'min_size = 80'
+INFO: 2021-03-23 00:29:32,309: log_options() 'min_size_enabled = False'
+INFO: 2021-03-23 00:29:32,309: log_options() 'quota_enabled = True'
+INFO: 2021-03-23 00:29:32,310: log_options() 'quota_size = 1000'
+INFO: 2021-03-23 00:29:32,310: log_options() 'quotes_authors = '
+INFO: 2021-03-23 00:29:32,310: log_options() 'quotes_bg_color = [80, 80, 80]'
+INFO: 2021-03-23 00:29:32,310: log_options() 'quotes_bg_opacity = 55'
+INFO: 2021-03-23 00:29:32,310: log_options() 'quotes_change_enabled = False'
+INFO: 2021-03-23 00:29:32,310: log_options() 'quotes_change_interval = 300'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_disabled_sources = ['']'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_enabled = False'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_favorites_file = /home/sobhan/.config/variety/favorite_quotes.txt'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_font = Bitstream Charter 30'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_hpos = 100'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_max_length = 250'
+INFO: 2021-03-23 00:29:32,311: log_options() 'quotes_tags = '
+INFO: 2021-03-23 00:29:32,312: log_options() 'quotes_text_color = [255, 255, 255]'
+INFO: 2021-03-23 00:29:32,312: log_options() 'quotes_text_shadow = False'
+INFO: 2021-03-23 00:29:32,312: log_options() 'quotes_vpos = 40'
+INFO: 2021-03-23 00:29:32,312: log_options() 'quotes_width = 70'
+INFO: 2021-03-23 00:29:32,312: log_options() 'safe_mode = False'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_custom_enabled = False'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_custom_folder = /home/sobhan/Pictures'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_downloads_enabled = False'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_fade = 0.4'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_favorites_enabled = True'
+INFO: 2021-03-23 00:29:32,313: log_options() 'slideshow_mode = Fullscreen'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_monitor = All'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_pan = 0.05'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_seconds = 6.0'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_sort_order = Random'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_sources_enabled = True'
+INFO: 2021-03-23 00:29:32,314: log_options() 'slideshow_zoom = 0.2'
+INFO: 2021-03-23 00:29:32,315: log_options() 'smart_enabled = False'
+INFO: 2021-03-23 00:29:32,315: log_options() 'smart_notice_shown = False'
+INFO: 2021-03-23 00:29:32,315: log_options() 'smart_register_shown = False'
+INFO: 2021-03-23 00:29:32,315: log_options() 'sources = [[False, 'favorites', 'The Favorites folder'], [False, 'fetched', 'The Fetched folder'], [False, 'folder', '/usr/share/backgrounds/'], [False, 'flickr', 'user:www.flickr.com/photos/peter-levi/;user_id:93647178@N00;'], [False, 'apod', "NASA's Astronomy Picture of the Day"], [False, 'bing', 'Bing Photo of the Day'], [False, 'earthview', 'Google Earth View Wallpapers'], [False, 'unsplash', 'High-resolution photos from Unsplash.com'], [True, 'folder', '/home/sobhan/owned/wall']]'
+INFO: 2021-03-23 00:29:32,315: log_options() 'stats_enabled = False'
+INFO: 2021-03-23 00:29:32,315: log_options() 'stats_notice_shown = False'
+INFO: 2021-03-23 00:29:32,316: log_options() 'sync_enabled = False'
+INFO: 2021-03-23 00:29:32,316: log_options() 'use_landscape_enabled = True'
+INFO: 2021-03-23 00:29:32,316: reload_config() 'No need to clear prepared queue'
+INFO: 2021-03-23 00:29:32,317: clock_thread_method() 'clock thread running'
+INFO: 2021-03-23 00:29:32,318: update_indicator() 'Setting file info to: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:29:32,407: load_last_change_time() 'Change interval < 6 hours, ignore persisted last_change_time, wait initially the whole interval: 300'
+INFO: 2021-03-23 00:29:32,408: update_indicator() 'Setting file info to: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:29:32,409: regular_change_thread() 'regular_change thread running'
+INFO: 2021-03-23 00:29:32,409: regular_change_thread() 'regular_change: waiting till user resumes'
+INFO: 2021-03-23 00:29:32,410: prepare_thread() 'Prepare thread running'
+INFO: 2021-03-23 00:29:32,411: prepare_thread() 'Prepared buffer contains 0 images'
+INFO: 2021-03-23 00:29:32,411: prepare_thread() 'Preparing some images'
+INFO: 2021-03-23 00:29:32,421: update_indicator_icon() 'Creating indicator'
+WARNING: 2021-03-23 00:29:32,446: create_menu() 'Variety Slideshow is not installed. This is an optional extension adding pan-and-zoom slideshows to Variety: see https://github.com/peterlevi/variety-slideshow for details'
+INFO: 2021-03-23 00:29:32,447: create_indicator() 'indicator backend: AppIndicator3'
+INFO: 2021-03-23 00:29:32,483: set_from_theme_icon() 'Showing indicator icon variety-indicator from GTK theme'
+INFO: 2021-03-23 00:29:32,508: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439572.508376'
+INFO: 2021-03-23 00:29:32,509: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:29:32,993: prepare_thread() 'After search prepared buffer contains 1 images'
+INFO: 2021-03-23 00:29:33,319: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:29:33,509: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439573.509188'
+INFO: 2021-03-23 00:29:33,509: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:29:34,994: trigger_download() 'Triggering download thread to check if download needed'
+INFO: 2021-03-23 00:29:51,202: reload() 'Reloading preferences dialog'
+INFO: 2021-03-23 00:29:52,428: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+INFO: 2021-03-23 00:30:00,352: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:30:00,352: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439600.3529646'
+INFO: 2021-03-23 00:30:00,353: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+ERROR: 2021-03-23 00:30:02,848: server_options_thread() 'Could not fetch Variety serverside options'
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.9/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.9/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd0640ff4f0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd0640ff4f0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/variety/VarietyWindow.py", line 1086, in server_options_thread
+    self.server_options = Util.fetch_json(VarietyWindow.SERVERSIDE_OPTIONS_URL)
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 644, in fetch_json
+    return Util.request(url, data, **request_kwargs).json()
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 614, in request
+    r = requests.request(
+  File "/usr/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd0640ff4f0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+INFO: 2021-03-23 00:30:32,884: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+ERROR: 2021-03-23 00:30:40,925: server_options_thread() 'Could not fetch Variety serverside options'
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.9/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.9/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd0641036a0>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd0641036a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/variety/VarietyWindow.py", line 1086, in server_options_thread
+    self.server_options = Util.fetch_json(VarietyWindow.SERVERSIDE_OPTIONS_URL)
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 644, in fetch_json
+    return Util.request(url, data, **request_kwargs).json()
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 614, in request
+    r = requests.request(
+  File "/usr/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd0641036a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+INFO: 2021-03-23 00:31:00,423: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:31:00,424: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439660.4244342'
+INFO: 2021-03-23 00:31:00,425: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:31:10,957: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+ERROR: 2021-03-23 00:31:14,365: server_options_thread() 'Could not fetch Variety serverside options'
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.9/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.9/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd064103850>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103850>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/variety/VarietyWindow.py", line 1086, in server_options_thread
+    self.server_options = Util.fetch_json(VarietyWindow.SERVERSIDE_OPTIONS_URL)
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 644, in fetch_json
+    return Util.request(url, data, **request_kwargs).json()
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 614, in request
+    r = requests.request(
+  File "/usr/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103850>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+INFO: 2021-03-23 00:31:44,397: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+ERROR: 2021-03-23 00:31:47,805: server_options_thread() 'Could not fetch Variety serverside options'
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.9/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.9/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd064103f10>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103f10>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/variety/VarietyWindow.py", line 1086, in server_options_thread
+    self.server_options = Util.fetch_json(VarietyWindow.SERVERSIDE_OPTIONS_URL)
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 644, in fetch_json
+    return Util.request(url, data, **request_kwargs).json()
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 614, in request
+    r = requests.request(
+  File "/usr/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103f10>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+INFO: 2021-03-23 00:32:00,497: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:32:00,499: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439720.4990613'
+INFO: 2021-03-23 00:32:00,499: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:32:17,837: server_options_thread() 'Fetching server options from http://tiny.cc/variety-options-063'
+ERROR: 2021-03-23 00:32:27,847: server_options_thread() 'Could not fetch Variety serverside options'
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 169, in _new_conn
+    conn = connection.create_connection(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen
+    httplib_response = self._make_request(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 394, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 234, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/lib/python3.9/http/client.py", line 1255, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1301, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1250, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.9/http/client.py", line 1010, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.9/http/client.py", line 950, in send
+    self.connect()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 200, in connect
+    conn = self._new_conn()
+  File "/usr/lib/python3.9/site-packages/urllib3/connection.py", line 181, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x7fd064103430>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "/usr/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen
+    retries = retries.increment(
+  File "/usr/lib/python3.9/site-packages/urllib3/util/retry.py", line 573, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103430>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.9/site-packages/variety/VarietyWindow.py", line 1086, in server_options_thread
+    self.server_options = Util.fetch_json(VarietyWindow.SERVERSIDE_OPTIONS_URL)
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 644, in fetch_json
+    return Util.request(url, data, **request_kwargs).json()
+  File "/usr/lib/python3.9/site-packages/variety/Util.py", line 614, in request
+    r = requests.request(
+  File "/usr/lib/python3.9/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 542, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/sessions.py", line 655, in send
+    r = adapter.send(request, **kwargs)
+  File "/usr/lib/python3.9/site-packages/requests/adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='tiny.cc', port=80): Max retries exceeded with url: /variety-options-063 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fd064103430>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+INFO: 2021-03-23 00:33:00,562: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:33:00,563: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439780.5632727'
+INFO: 2021-03-23 00:33:00,564: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:34:00,633: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:34:00,634: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439840.6347198'
+INFO: 2021-03-23 00:34:00,635: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:35:00,711: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:35:00,712: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439900.7129579'
+INFO: 2021-03-23 00:35:00,713: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-23 00:36:00,780: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-23 00:36:00,782: do_set_wp() 'Calling do_set_wp with /home/sobhan/owned/wall/035.jpeg, time: 1616439960.7824912'
+INFO: 2021-03-23 00:36:00,783: do_set_wp() 'Missing file or bad permissions, will not use it: /home/sobhan/owned/wall/035.jpeg'
+INFO: 2021-03-22 19:06:05,190: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:07:00,273: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:08:00,367: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:09:00,460: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:10:00,550: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:11:00,645: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:12:00,722: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:13:00,798: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:14:00,875: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:15:00,952: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:16:00,037: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:17:00,116: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:18:00,194: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:19:00,272: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:20:00,358: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:21:00,435: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:22:00,509: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:23:00,576: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:24:00,643: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:25:00,713: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:26:00,788: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:27:00,870: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:28:00,943: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:29:00,012: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:30:00,091: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:31:00,178: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:32:00,261: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:33:00,340: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:34:00,417: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:35:00,492: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:36:00,581: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:37:00,646: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:38:00,716: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:39:00,783: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:40:00,866: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:41:00,947: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:42:00,017: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:43:00,100: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:44:00,164: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:45:00,235: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:46:00,301: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:47:00,376: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:48:00,458: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:49:00,540: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:50:00,608: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:51:00,674: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:52:00,746: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:53:00,823: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:54:00,906: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:55:00,977: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:56:00,043: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:57:00,121: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:58:00,199: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 19:59:00,269: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:00:00,333: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:01:00,404: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:02:00,475: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:03:00,549: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:04:00,620: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:05:00,695: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:06:00,770: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:07:00,838: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:08:00,906: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:09:00,971: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:10:00,038: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:11:00,104: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:12:00,168: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:13:00,236: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:14:00,307: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:15:00,371: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:16:00,436: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:17:00,502: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:18:00,566: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:19:00,628: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:20:00,696: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:21:00,760: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:22:00,821: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:23:00,887: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:24:00,954: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:25:00,019: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:26:00,084: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:27:00,146: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:28:00,209: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:29:00,277: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:30:00,345: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:31:00,416: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:32:00,481: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:33:00,547: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:34:00,609: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:35:00,676: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:36:00,739: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:37:00,800: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:38:00,866: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:39:00,934: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:40:01,002: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:41:00,074: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:42:00,146: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:43:00,212: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:44:00,284: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:45:00,358: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:46:00,436: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:47:00,513: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:48:00,589: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:49:00,661: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:50:00,728: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:51:00,797: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:52:00,875: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:53:00,959: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:54:00,028: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:55:00,102: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:56:00,184: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:57:00,266: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:58:00,344: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 20:59:00,427: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 21:00:00,504: clock_thread_method() 'clock_thread updates wallpaper'
+INFO: 2021-03-22 21:01:00,572: clock_thread_method() 'clock_thread updates wallpaper'
