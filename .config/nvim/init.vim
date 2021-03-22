@@ -62,6 +62,7 @@ Plug 'samuelsimoes/vim-jsx-utils'
 "Plug 'tmhedberg/simpylfold'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
+Plug 'wakatime/vim-wakatime'
 
 "NEW
 "Plug 'prettier/vim-prettier'
