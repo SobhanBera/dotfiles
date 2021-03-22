@@ -328,7 +328,7 @@ for i in groups:
 
 # custom name in different fonts...
 # and remove conky bvy default...
-# lazy.spawn('conky-toggle')
+lazy.spawn('conky-toggle')
 import random
 import datetime # will require at widget part
 my_name_list = [
@@ -348,6 +348,38 @@ my_name_list = [
     # "$⊙β¦-¦Д⁄(⁄  β€®Д"
 ]
 
+# COLORS FOR THE BAR
+
+#def init_colors():
+#    return [["#2F343F", "#2F343F"], # color 0
+#            ["#2F343F", "#2F343F"], # color 1
+#            ["#c0c5ce", "#c0c5ce"], # color 2
+#            ["#fba922", "#fba922"], # color 3
+#            ["#3384d0", "#3384d0"], # color 4
+#            ["#f3f4f5", "#f3f4f5"], # color 5
+#            ["#cd1f3f", "#cd1f3f"], # color 6
+#            ["#62FF00", "#62FF00"], # color 7
+#            ["#6790eb", "#6790eb"], # color 8
+#            ["#a9a9a9", "#a9a9a9"]] # color 9
+
+def init_color_final():
+    return [
+        ["#160e19", "#160e19"], # 0- main background 0b0f1a
+        ["#bdbdbd", "#bdbdbd"], # 1- main foreground
+        ["#df3917", "#df3917"], # 2- arrow 1 background
+        ["#ffffff", "#ffffff"], # 3- arrow 1 foreground
+        ["#2d3236", "#2d3236"], # 4- arrow 2 background
+        ["#ffffff", "#ffffff"], # 5- arrow 2 foreground
+        ["#cfcfcf", "#cfcfcf"], # 6- enabled
+        ["#909090", "#909090"], # 7- disabled
+        ["#df3917", "#df3917"], # 8- highlight background
+        ["#ffffff", "#ffffff"], # 9- highlight foreground
+        "#df3917",            # 10 - single color
+    ]
+
+colors = init_color_final()
+currcolor = True
+
 def init_layout_theme(name):
     return {
         "margin":3,
@@ -360,9 +392,9 @@ def init_layout_theme(name):
 
 layouts = [
     layout.MonadTall(
-        margin=13,
-        border_width=1,
-        border_focus="#303030",
+        margin=15,
+        border_width=2,
+        border_focus=colors[10],
         border_normal="#000000",
         max_ratio=0.95,
         change_size= 0.085,
@@ -395,37 +427,6 @@ layouts = [
     layout.RatioTile(**init_layout_theme("RatioTile")),
     layout.Max(**init_layout_theme("Max"))
 ]
-
-# COLORS FOR THE BAR
-
-#def init_colors():
-#    return [["#2F343F", "#2F343F"], # color 0
-#            ["#2F343F", "#2F343F"], # color 1
-#            ["#c0c5ce", "#c0c5ce"], # color 2
-#            ["#fba922", "#fba922"], # color 3
-#            ["#3384d0", "#3384d0"], # color 4
-#            ["#f3f4f5", "#f3f4f5"], # color 5
-#            ["#cd1f3f", "#cd1f3f"], # color 6
-#            ["#62FF00", "#62FF00"], # color 7
-#            ["#6790eb", "#6790eb"], # color 8
-#            ["#a9a9a9", "#a9a9a9"]] # color 9
-
-def init_color_final():
-    return [
-        ["#160e19", "#160e19"], # 0- main background 0b0f1a
-        ["#bdbdbd", "#bdbdbd"], # 1- main foreground
-        ["#df3917", "#df3917"], # 2- arrow 1 background
-        ["#ffffff", "#ffffff"], # 3- arrow 1 foreground
-        ["#2d3236", "#2d3236"], # 4- arrow 2 background
-        ["#ffffff", "#ffffff"], # 5- arrow 2 foreground
-        ["#cfcfcf", "#cfcfcf"], # 6- enabled
-        ["#909090", "#909090"], # 7- disabled
-        ["#df3917", "#df3917"], # 8- highlight background
-        ["#ffffff", "#ffffff"], # 9- highlight foreground
-    ]
-
-colors = init_color_final()
-currcolor = True
 
 def colorsToggler():
     if currcolor == True:
@@ -500,7 +501,7 @@ def init_widgets_list():
                         ),
                widget.WindowName(font="Noto Sans",
                         fontsize = 14,
-                        foreground = colors[1],
+                        foreground = colors[8],
                         background = colors[0],
                         ),
                 # widget.WidgetBox(
