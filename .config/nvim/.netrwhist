@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/sobhan/Documents'
+let g:netrw_dirhist_7='/home/sobhan/Documents/Projects/socbyte-native'
+let g:netrw_dirhist_6='/home/sobhan/Documents'
+let g:netrw_dirhist_5='/home/sobhan/Documents/Projects/src'
+let g:netrw_dirhist_4='/home/sobhan/Documents/Projects/web-templates'
+let g:netrw_dirhist_3='/home/sobhan/Documents'
+let g:netrw_dirhist_2='/home/sobhan/Documents/Projects'
+let g:netrw_dirhist_1='/home/sobhan/Documents/Projects/web-templates'

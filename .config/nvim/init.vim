@@ -20,7 +20,7 @@ set history=3333
 set termguicolors
 set scrolloff=7
 set completeopt=menuone,noinsert,noselect
-set colorcolumn=100
+set colorcolumn=99
 set signcolumn=yes
 set cmdheight=1
 set updatetime=200
@@ -60,34 +60,40 @@ Plug 'ap/vim-css-color'
 Plug 'alvan/vim-closetag'
 Plug 'samuelsimoes/vim-jsx-utils'
 "Plug 'tmhedberg/simpylfold'
-Plug 'terryma/vim-multiple-cursors'
+"Plug 'terryma/vim-multiple-cursors'
 Plug 'mattn/emmet-vim'
 
 "NEW
 "Plug 'prettier/vim-prettier'
 "OLD
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'branch': 'release/0.x'
-  \ }
+"Plug 'prettier/vim-prettier', {
+"  \ 'do': 'yarn install',
+"  \ 'branch': 'release/0.x'
+"  \ }
+Plug 'sbdchd/neoformat'
 call plug#end()
 
 colorscheme gruvbox
 highlight Normal guibg=NONE
 
+highlight OverLength ctermbg=red ctermfg=white guibg=#0f60b6 guifg=#000000
+match OverLength /\%81v.\+/
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MY MAPPINGS...
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader=" "
+" imp configs...
+nnoremap <leader>s :source $MYVIMRC<CR>
+nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader>z <Esc>:w<CR>
 nnoremap <leader>vs <Esc>:vs<CR>
-nnoremap <leader>e :e $MYVIMRC<CR>
-nnoremap <leader>s :source $MYVIMRC<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>bN :bprevious<CR>
 nnoremap <leader>bn :bnext<CR>
 nnoremap <leader>bd :bd<CR>
 nnoremap <F5> :terminal <CR>
+nnoremap <leader>v :vs<CR>
 nnoremap <c-k> :Commentary<CR>
 nmap <silent> <c-s> <Esc>:w<CR>
 nmap <silent> 1j 5j
@@ -96,6 +102,9 @@ nmap <silent> 3j 15j
 nmap <silent> 1k 5k
 nmap <silent> 2k 10k
 nmap <silent> 3k 15k
+
+" For competitive programming...
+nnoremap <leader>lio :e in.txt <CR>:split out.txt<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " helpful..
@@ -151,6 +160,17 @@ endfun
 augroup SOBHAN_BERA
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+
+    " run, build, compile other extension files...
+    autocmd filetype java nnoremap <F9> :w <CR> :!javac %:r.java<CR>
+    autocmd filetype java nnoremap <F10> :!java %:r <CR>
+    autocmd filetype c nnoremap <F11> w <CR> :!gcc % && ./a.out<CR>
+    autocmd filetype cpp nnoremap <F9> :w <bar> :!g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR><CR>
+    autocmd filetype cpp nnoremap <F10> :!%:r<CR><CR>
+    autocmd filetype cpp nnoremap <F11> :w <CR> !g++ -std=c++14 -Wshadow -Wall % -o %:r -Wl && ./%:r<CR>
+    autocmd filetype py,python nnoremap <F10> :w <bar> !python %<CR>
+    autocmd filetype js,javascript nnoremap <F10> :w <bar> !node %<CR>
 augroup END
 
 let g:netrw_banner=0 " disable banner in netrw
@@ -189,9 +209,9 @@ let g:neoterm_size = 50
 let g:neoterm_autoinsert = 1
 let g:neoterm_autoscroll = 1
 let g:neoterm_term_per_tab = 1
-nnoremap <c-q> <Esc>:Ttoggle<CR>
-inoremap <c-q> <Esc>:Ttoggle<CR>
-tnoremap <c-q> <c-\><c-n>:Ttoggle<CR>
+nnoremap <c-e> <Esc>:Ttoggle<CR>
+inoremap <c-e> <Esc>:Ttoggle<CR>
+tnoremap <c-e> <c-\><c-n>:Ttoggle<CR>
 nnoremap <leader>x :TREPLSendLine<CR>
 vnoremap <leader>x :TREPLSendSelection<CR>
 
@@ -244,7 +264,7 @@ nmap <leader>rn <Plug>(coc-rename)
 "xmap <leader>f  <Plug>(coc-format-selected)
 "nmap <leader>f  <Plug>(coc-format-selected)
 "FOR VIM-PRETTIER
-"NOTHIN currently...
+autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css CocCommand prettier.formatFile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-test...
