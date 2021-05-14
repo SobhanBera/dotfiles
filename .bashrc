@@ -220,16 +220,28 @@ ex ()
 
 [[ -f ~/.bashrc-personal ]] && . ~/.bashrc-personal
 
-neofetch
+#neofetch
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-
+#normal vim or nvim
 alias v="~/owned/nvim/bin/nvim"
 alias vim="~/owned/nvim/bin/nvim"
 alias nvim="~/owned/nvim/bin/nvim"
 
+#sudo nvim or vim
 alias sv="sudo ~/owned/nvim/bin/nvim"
 alias svim="sudo ~/owned/nvim/bin/nvim"
 alias snvim="sudo ~/owned/nvim/bin/nvim"
+
+#git short commands
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gac="git add . && git commit -m"
+
+PATH="~/Android/Sdk/platform-tools:$PATH"
+
 

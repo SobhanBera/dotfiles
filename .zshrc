@@ -11,7 +11,8 @@ export ZSH=/usr/share/oh-my-zsh/
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="robbyrussell"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -301,6 +302,26 @@ ex ()
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-neofetch
+#neofetch
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#normal vim or nvim
+alias v="~/owned/nvim/bin/nvim"
+alias vim="~/owned/nvim/bin/nvim"
+alias nvim="~/owned/nvim/bin/nvim"
+
+#sudo nvim or vim
+alias sv="sudo ~/owned/nvim/bin/nvim"
+alias svim="sudo ~/owned/nvim/bin/nvim"
+alias snvim="sudo ~/owned/nvim/bin/nvim"
+
+#git short commands
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias gp="git push"
+alias gac="git add . && git commit -m"
+
+PATH="~/Android/Sdk/platform-tools:$PATH"
