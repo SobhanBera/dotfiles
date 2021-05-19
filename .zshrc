@@ -306,22 +306,35 @@ ex ()
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#normal vim or nvim
+
+# Vim or nvim / other editors
 alias v="~/owned/nvim/bin/nvim"
 alias vim="~/owned/nvim/bin/nvim"
 alias nvim="~/owned/nvim/bin/nvim"
+alias vsc="code ."
 
-#sudo nvim or vim
+# Su nvim or Vim
 alias sv="sudo ~/owned/nvim/bin/nvim"
 alias svim="sudo ~/owned/nvim/bin/nvim"
 alias snvim="sudo ~/owned/nvim/bin/nvim"
 
-#git short commands
-alias gs="git status"
+# Git
+alias gst="git status"
 alias ga="git add"
 alias gaa="git add ."
-alias gc="git commit -m"
+alias gct="git commit -m"
 alias gp="git push"
-alias gac="git add . && git commit -m"
+alias gaact="git add . && git commit -m"
+alias gd="git diff | subl"
+
+# File Navigations
+alias comp="cd ~/Documents/Codes"
+alias proj="cd ~/Documents/Projects"
+alias home="cd ~"
+alias ls="ls -lah"
+
+# Competitive Programming
+alias cpin="cat > input"
 
 PATH="~/Android/Sdk/platform-tools:$PATH"
+
