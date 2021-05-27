@@ -338,3 +338,20 @@ alias cpin="cat > input"
 
 PATH="~/Android/Sdk/platform-tools:$PATH"
 
+alias v="~/owned/nvim/bin/nvim"
+alias vi="~/owned/nvim/bin/nvim"
+alias vim="~/owned/nvim/bin/nvim"
+alias nvim="~/owned/nvim/bin/nvim"
+
+alias sv="sudo ~/owned/nvim/bin/nvim"
+alias svi="sudo ~/owned/nvim/bin/nvim"
+alias svim="sudo ~/owned/nvim/bin/nvim"
+alias snvim="sudo ~/owned/nvim/bin/nvim"
+
+alias gd="git diff"
+alias gct="git commit -m"
+alias gst="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gp="git push"
+alias gaacp="git add . && git commit -m 'commited' && git push"
