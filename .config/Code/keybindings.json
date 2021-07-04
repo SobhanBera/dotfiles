@@ -1,0 +1,23 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "ctrl+shift+b shift+alt+b",
+		"command": "editor.emmet.action.balanceOut"
+	},
+	{
+		"key": "shift+alt+b ctrl+shift+b",
+		"command": "editor.emmet.action.balanceIn"
+	},
+	{
+		"key": "ctrl+n ctrl+d",
+		"command": "explorer.newFile"
+	},
+	{
+		"key": "ctrl+n ctrl+f",
+		"command": "explorer.newFolder"
+	},
+	{
+		"key": "ctrl+m ctrl+p",
+		"command": "workbench.action.toggleMaximizedPanel"
+	}
+]
