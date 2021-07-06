@@ -1,9 +1,4 @@
-#
-# ~/.bash_profile
-#
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+export ANDROID_HOME=/Users/$USER/Library/Android/sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-alias v=~/owned/nvim/bin/nvim
-alias vim=~/owned/nvim/bin/nvim
-alias nvim=~/owned/nvim/bin/nvim
